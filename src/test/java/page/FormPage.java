@@ -17,36 +17,39 @@ public class FormPage extends BasePage {
 	//private final String flagLanguageButtonCsSelector=".btn-section";
 	//private final String flagChangeLanguageButtonCssSelector=".btn-.taglib-text-icon";
 
-	//Form field
+	//Form field and error text
 	private final String nameFieldXpath ="//input[@class='form-control ddm-field-text']";
+	private final String nameErrorFieldCssSelector = ".col-md-7 .form-feedback-item";
 	private final String dobPickerCssSelector =".lexicon-icon-calendar > use";
+	private final String dobPickerErrorFieldCssSelector = ".col-md-7 .form-feedback-item";
 	private final String whyFieldCssSelector =".col-md-12 > .ddm-field-container .ddm-field-text";
+	private final String whyErrorFieldCssSelector = ".col-md-7 .form-feedback-item";
 
 	//Submit button
 	private final String submitButtonID="ddm-form-submit";
 
-	// URL FormPage
+	//URL FormPage
 	public final String baseURL = "https://forms.liferay.com/web/forms/shared/-/form/122548";
 
 
 	//We avoid implementation of methods to change language. Same behaviour as form fields.
 
-	// Return name Field object
+	//Return name Field object
 	public WebElement txtbx_name() {
 		return driver.findElement(By.xpath(nameFieldXpath));			
 	}
 
-	// Return dob datapicker object
+	//Return dob datapicker object
 	public WebElement txtbx_dob() {
 		return driver.findElement(By.cssSelector(dobPickerCssSelector));
 	}
 
-	// Return Why Testing Field object
+	//Return Why Testing Field object
 	public WebElement txtbx_whyTesting() {
 		return driver.findElement(By.cssSelector(whyFieldCssSelector));
 	}
 
-	// Return submit button object
+	//Return submit button object
 	public WebElement btn_Submit() {
 		return driver.findElement(By.id(submitButtonID));
 	}
@@ -55,23 +58,23 @@ public class FormPage extends BasePage {
 
 	//Return name error object
 	public WebElement findErrorNameField() {
-		return 	driver.findElement(By.cssSelector(".col-md-7 .form-feedback-item"));
+		return 	driver.findElement(By.cssSelector(nameErrorFieldCssSelector));
 	}
 
 	//Return dob error object
 	public WebElement findErrorDOBField() {
-		return 	driver.findElement(By.cssSelector(".form-feedback-group:nth-child(7) > .form-feedback-item"));
+		return 	driver.findElement(By.cssSelector(dobPickerErrorFieldCssSelector));
 	}
 
 	//Return whytesting error object
 	public WebElement findErrorWhyTestingField() {
-		return 	driver.findElement(By.cssSelector(".col-md-12 > .ddm-field-container .form-feedback-item"));
+		return 	driver.findElement(By.cssSelector(whyErrorFieldCssSelector));
 	}
 
-	// *********Page Methods*********
-	// we avoid methods to change language. out of scope.
+	//*********Page Methods*********
+	//we avoid methods to change language. out of scope.
 
-	// Go to Form Page
+	//Go to Form Page
 	public void goToFormPage() {
 		driver.get(baseURL);
 	}

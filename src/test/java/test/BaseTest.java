@@ -36,7 +36,7 @@ public class BaseTest {
 	private final String PATH_REMOTE_SCREENSHOTS = "target/surefire-reports/";
 
 	/**
-	 * Initialize ChromeDriver. If local file doesnt' exist, remote chromedriver is
+	 * Initialize ChromeDriver. If locale file doesnt' exist, remote chromedriver is
 	 * used and some configuration options are sent to testing bot
 	 * 
 	 * @throws MalformedURLException
@@ -51,6 +51,7 @@ public class BaseTest {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 		} else {
+			//Generic configuration of browser used on Testing Bot. For a full browser testing we should play with this options
 			DesiredCapabilities capabillities = new DesiredCapabilities();
 			capabillities.setCapability("platform", "Windows 10");
 			capabillities.setCapability("version", "latest");
@@ -59,7 +60,7 @@ public class BaseTest {
 
 			driver = new RemoteWebDriver(new URL(URL), capabillities);
 			
-			//Run locally using testbot. Only for testing. Not good practise display the key and secret testingbot password
+			//Run locally using testbot. Only for testing. Not a good practise display the key and secret testingbot password
 			//driver = new RemoteWebDriver(new URL("http://632ee51d94a11e13d5352a10eaa71738:685a3dcc2752d0de3e8039562b45086f@hub.testingbot.com/wd/hub"), capabillities);
 
 
