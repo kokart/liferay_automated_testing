@@ -57,10 +57,10 @@ public class BaseTest {
 			capabillities.setCapability("browserName", "chrome");
 			capabillities.setCapability("name", testMethod.getName());
 
-			//driver = new RemoteWebDriver(new URL(URL), capabillities);
+			driver = new RemoteWebDriver(new URL(URL), capabillities);
 			
 			//Run locally using testbot. Only for testing. Not good practise display the key and secret testingbot password
-			driver = new RemoteWebDriver(new URL("http://632ee51d94a11e13d5352a10eaa71738:685a3dcc2752d0de3e8039562b45086f@hub.testingbot.com/wd/hub"), capabillities);
+			//driver = new RemoteWebDriver(new URL("http://632ee51d94a11e13d5352a10eaa71738:685a3dcc2752d0de3e8039562b45086f@hub.testingbot.com/wd/hub"), capabillities);
 
 
 		}
