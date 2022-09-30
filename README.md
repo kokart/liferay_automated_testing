@@ -9,5 +9,5 @@ The example has a test using DataProvider and if it fails, a screenshot is taken
 
 
 Now it's running CircleCI and TestingBOT as selenium hub. Chromedrive local file is included but if you want to launch in local you should
-rename a file called locale to local. This file can be found on resources folder, next to chromedriver.exe
+rename a file called locale to local. This file can be found on resources folder, next to chromedriver.exe.
 
